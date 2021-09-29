@@ -1,5 +1,11 @@
-from market import app
+from flask import Flask
 
-#Checks if the run.py file has executed directly and not imported
-if __name__ == '__main__':
-    app.run(debug=True) 
+application=Flask(__name__)
+
+@application.route('/')
+def hello_world():
+    return 'hello world'
+
+
+if __name__=='__main__':
+    application.run()
